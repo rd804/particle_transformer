@@ -33,7 +33,8 @@ class ParticleTransformerWrapper(nn.Module):
     def no_weight_decay(self):
         return {'mod.cls_token', }
 
-    def forward(self, points, features, lorentz_vectors, mask):
+    def forward(self, features, lorentz_vectors, mask):
+        self.mod.requires_grad_(False)
         x_cls = self.mod(features, v=lorentz_vectors, mask=mask)
         output = self.fc(x_cls)
         if self.for_inference:

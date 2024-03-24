@@ -17,7 +17,7 @@ class ParticleTransformerWrapper(torch.nn.Module):
     def no_weight_decay(self):
         return {'mod.cls_token', }
 
-    def forward(self, points, features, lorentz_vectors, mask):
+    def forward(self, features, lorentz_vectors, mask):
         return self.mod(features, v=lorentz_vectors, mask=mask)
 
 

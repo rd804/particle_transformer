@@ -4,10 +4,15 @@
 __pycache__/
 *.py[cod]
 *$py.class
+data/*
+data/JetClass/*.hdf5
+data/JetClass/*.zip
+data/JetClass/_MACOSX/*
+data/JetClass/__MACOSX
 
 # C extensions
 *.so
-
+*.out 
 # Distribution / packaging
 .Python
 build/
