@@ -34,7 +34,7 @@ class ParticleTransformerWrapper(nn.Module):
         return {'mod.cls_token', }
 
     def forward(self, features, lorentz_vectors, mask):
-        self.mod.requires_grad_(False)
+        #self.mod.requires_grad_(False)
         x_cls = self.mod(features, v=lorentz_vectors, mask=mask)
         output = self.fc(x_cls)
         if self.for_inference:
